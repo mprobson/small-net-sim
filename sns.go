@@ -23,6 +23,10 @@ type task struct {
 func execute(results chan<- int, traces []task, hw node) {
   currentTime := 0
 
+  for index, _ := range traces {
+    currentTime += traces[index].cycles
+  }
+
   results <- currentTime
 }
 
@@ -35,7 +39,7 @@ func main() {
   var trace1 []task
 
   node2 := node{}
-  var trace2 []task
+  trace2 := []task{task{cycles: 2}}
 
   go execute(results, trace1, node1)
 
