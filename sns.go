@@ -20,7 +20,7 @@ type task struct {
   outputs []message
 }
 
-func execute(results chan<- int, trace []task, hw node) {
+func execute(results chan<- int, traces []task, hw node) {
   currentTime := 0
 
   results <- currentTime
