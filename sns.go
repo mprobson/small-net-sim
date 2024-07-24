@@ -44,7 +44,7 @@ func main() {
   time1 := <-results
   time2 := <-results
 
-  totalTime := min(time1, time2)
+  totalTime := max(time1, time2)
 
   fmt.Println("Total execution time: ", totalTime)
 }
